@@ -3,6 +3,8 @@
 namespace csp;
 
 internal static class Program {
+    private const string Version = "1.0.0";
+
     private static string _path = null!;
     private static string _editor = null!;
 
@@ -65,7 +67,7 @@ internal static class Program {
 
         Console.WriteLine("Running dotnet new console...");
         Directory.CreateDirectory(_path);
-        RunDotnet(["new", "console"]);
+        RunDotnet(new[] { "new", "console" });
     }
 
     private static void RunDotnet(IEnumerable<string> arguments) {
@@ -86,7 +88,7 @@ internal static class Program {
 
     private static void RunProject() {
         Console.WriteLine("-- Running --");
-        RunDotnet(["run"]);
+        RunDotnet(new[] { "run" });
     }
 
     private static void EditProject() {
